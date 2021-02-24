@@ -1,0 +1,17 @@
+REST Endpoints
+User:
+  Create
+  Read
+  Update
+
+Store:
+  Create
+  Read
+  Update
+
+Products:
+  Create
+  Read
+  Update (limited)
+
+  guys this blew my mind, and I just had to share it with everyone

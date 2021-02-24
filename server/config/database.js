@@ -1,5 +1,6 @@
 const { Sequelize, Model, DataTypes } = require('sequelize');
-const sequelize = new Sequelize('database', 'jorge', 'jorge', {
+module.exports = new Sequelize('mercado', 'jorge', 'jorge', {
   host: 'localhost',
   dialect: 'postgres'
 });
+
