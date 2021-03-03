@@ -23,6 +23,7 @@ function MenuBar({ menuHandler }) {
       />
       <MenuBarItem
         menuHandler={menuHandler}
+        menuToOpen="<LoginView />"
         icon={["Ionicons", "person", 20, "white"]}
         title="Profile"
       />
@@ -33,7 +34,6 @@ function MenuBar({ menuHandler }) {
 const styles = StyleSheet.create({
   menuBar: {
     backgroundColor: colors.green100,
-    height: "10%",
     width: "100%",
     flexDirection: "row",
     justifyContent: "space-around",
