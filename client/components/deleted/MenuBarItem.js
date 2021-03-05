@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, View, StyleSheet, TouchableHighlight } from "react-native";
 import iconHelper from "../helpers/iconHelper";
-
+// probably atomic
 import colors from "../helpers/colors";
 
 function MenuBarItem(props) {

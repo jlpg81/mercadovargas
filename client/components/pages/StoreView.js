@@ -1,8 +1,8 @@
 import React from "react";
 import { Image, Text, View, StyleSheet, TextInput } from "react-native";
-import colors from "../helpers/colors";
-import iconHelper from "../helpers/iconHelper";
-import StoreProductsView from "./StoreProductsView";
+import colors from "../../helpers/colors";
+import iconHelper from "../../helpers/iconHelper";
+import StoreProductsView from "../StoreProductsView";
 
 const dummyStores = {
   id: 1,
@@ -23,7 +23,7 @@ function StoreView(props) {
       <View style={styles.superMarketTopContainer}>
         <Image
           style={styles.superMarketLogo}
-          source={require("../assets/cm.png")}
+          source={require("../../assets/cm.png")}
         />
         <TextInput style={styles.superMarketSearchInput}></TextInput>
         {iconHelper("AntDesign", "search1", 20, "green")}
@@ -41,18 +41,14 @@ const styles = StyleSheet.create({
     resizeMode: "contain",
   },
   superMarketTopContainer: {
-    // backgroundColor: colors.primary,
     flexDirection: "row",
     alignItems: "center",
     borderBottomColor: "green",
     borderBottomWidth: 2,
   },
   superMarketSearchInput: {
-    // backgroundColor: colors.green100,
     borderColor: colors.lightgray,
-    // borderWidth: 2,
     borderBottomWidth: 1,
-    // borderRadius: 5,
     height: 20,
     marginLeft: 10,
     marginRight: 10,

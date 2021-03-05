@@ -1,11 +1,19 @@
 import React from "react";
-import { Text, View, StyleSheet, TextInput, Button } from "react-native";
-import colors from "../helpers/colors";
-import CircularLogoHeader from "./presentationals/CircularLogoHeader";
+import {
+  Platform,
+  Text,
+  View,
+  StyleSheet,
+  TextInput,
+  Button,
+} from "react-native";
 
-function LoginView(props) {
+import colors from "../../helpers/colors";
+import CircularLogoHeader from "../molecules/CircularLogoHeader";
+
+function LoginView({ navigation }) {
   return (
-    <View style={styles.loginStyle}>
+    <View style={styles.loginContainer}>
       <CircularLogoHeader></CircularLogoHeader>
       <View style={styles.loginInputContainer}>
         <Text style={styles.loginInputLabel}>Email</Text>
@@ -16,7 +24,7 @@ function LoginView(props) {
           <Button
             color={colors.green100}
             title="Log In"
-            onPress={() => console.log("Button log in pressed")}
+            onPress={() => navigation.replace("StoreProductsView")}
           />
         </View>
       </View>
@@ -25,9 +33,12 @@ function LoginView(props) {
 }
 
 const styles = StyleSheet.create({
-  loginStyle: {
+  loginContainer: {
     alignItems: "center",
     justifyContent: "center",
+    flex: 1,
+    backgroundColor:
+      Platform.OS === "android" ? colors.white : colors.programmingBlue,
   },
   loginInputContainer: {
     transform: [{ translateY: -130 }],
