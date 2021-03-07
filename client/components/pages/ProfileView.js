@@ -1,13 +1,12 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import CircularLogoHeader2 from "../molecules/CircularLogoHeader2";
 import MenuProfile from "../organisms/MenuProfile";
-import LoginView from "./LoginView";
 
 function ProfileView(props) {
   return (
-    <View>
-      <CircularLogoHeader2 style={styles.header} />
+    <View style={styles.ProfileViewContainer}>
+      <CircularLogoHeader2 />
       <View style={styles.profileMenu}>
         <MenuProfile />
       </View>
@@ -16,13 +15,12 @@ function ProfileView(props) {
 }
 
 const styles = StyleSheet.create({
-  header: {
-    backgroundColor: "dodgerblue",
+  ProfileViewContainer: {
+    backgroundColor: "white",
+    flex: 1,
   },
   profileMenu: {
-    // backgroundColor: "green",
     transform: [{ translateY: -180 }],
-    // flex: 1,
   },
 });
 

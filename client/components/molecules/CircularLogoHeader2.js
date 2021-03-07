@@ -26,8 +26,12 @@ const styles = StyleSheet.create({
   greenTop: {
     backgroundColor: colors.green100,
     height: 200,
-    width: 440,
-    transform: [{ translateX: 0 }, { translateY: -150 }, { rotate: "-10deg" }],
+    width: 460,
+    transform: [
+      { translateX: -20 },
+      { translateY: -140 },
+      { rotate: "-10deg" },
+    ],
   },
   whiteCircle: {
     backgroundColor: colors.white,

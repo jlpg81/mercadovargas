@@ -18,7 +18,7 @@ function StoreItem(props) {
       </View>
       <View style={styles.storeItemText}>
         <Text>Makro Valencia</Text>
-        <Text>Ciudad: Valencia, Carabobo</Text>
+        <Text>Valencia, Carabobo</Text>
         <Text>⭐ 4.3 (506)</Text>
       </View>
     </TouchableOpacity>

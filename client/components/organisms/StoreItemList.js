@@ -26,7 +26,7 @@ function StoreItemList(props) {
 }
 
 const styles = StyleSheet.create({
-  storeItemListContainer: { flex: 1 },
+  storeItemListContainer: { flex: 1, marginLeft: 20 },
 });
 
 export default StoreItemList;
