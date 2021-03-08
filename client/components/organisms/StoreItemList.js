@@ -9,7 +9,11 @@ function StoreItemList(props) {
       return (
         <>
           {props.stores.stores.map((store, index) => (
-            <StoreItem key={index} store={store} />
+            <StoreItem
+              key={index}
+              store={store}
+              navigation={props.navigation}
+            />
           ))}
         </>
       );

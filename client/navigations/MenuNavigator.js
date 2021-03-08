@@ -1,29 +1,14 @@
 import React from "react";
-
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import StoreProductsView from "../components/pages/StoreProductsView";
-import LoginView from "../components/pages/LoginView";
 import colors from "../helpers/colors";
 import iconHelper from "../helpers/iconHelper";
-import productShowcase from "../components/molecules/ProductShowcase";
 import ProductDisplayList from "../components/organisms/ProductDisplayList";
-import ProductImageRoller from "../components/molecules/ProductImageRoller";
-import ProductDetailTitle from "../components/molecules/ProductDetailTitle";
-import ProductDetailDescription from "../components/molecules/ProductDetailDescription";
 import ProductDetailView from "../components/pages/ProductDetailView";
-import StoreItem from "../components/molecules/StoreItem";
-import StoreItemHalf from "../components/molecules/StoreItemHalf";
-import StoreItemList from "../components/organisms/StoreItemList";
-import StoreItemHalfList from "../components/organisms/StoreItemHalfList";
-import MenuItem from "../components/atoms/MenuItem";
-import MenuProfile from "../components/organisms/MenuProfile";
-import CircularLogoHeader from "../components/molecules/CircularLogoHeader";
-import CircularLogoHeader2 from "../components/molecules/CircularLogoHeader2";
-import ProfileView from "../components/pages/ProfileView";
 import Profile from "./ProfileNavigator";
-import MainPage from "../components/pages/MainPage";
-import CitySelector from "../components/atoms/CitySelector";
+import MainPage from "../components/pages/StorePages/MainPage";
+import MainPageContent from "../components/pages/StorePages/MainPageContent";
+import StoreView from "../components/pages/StorePages/StoreView";
 
 const Menu = createBottomTabNavigator();
 
@@ -41,13 +26,14 @@ function MenuNavigator(props) {
         name="Home"
         // component={CitySelector}
         component={MainPage}
+        // component={ProductDisplayList}
         options={{
           tabBarIcon: () => iconHelper("Entypo", "home", 20, "white"),
         }}
       />
       <Menu.Screen
         name="Search"
-        component={ProductDisplayList}
+        component={StoreView}
         options={{
           tabBarIcon: () => iconHelper("AntDesign", "search1", 20, "white"),
         }}
@@ -59,13 +45,13 @@ function MenuNavigator(props) {
           tabBarIcon: () => iconHelper("Feather", "shopping-cart", 20, "white"),
         }}
       />
-      <Menu.Screen
+      {/* <Menu.Screen
         name="Profile"
         component={Profile}
         options={{
           tabBarIcon: () => iconHelper("Ionicons", "person", 20, "white"),
         }}
-      />
+      /> */}
     </Menu.Navigator>
   );
 }

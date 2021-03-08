@@ -1,34 +1,23 @@
 import React from "react";
 import { Image, Text, View, StyleSheet, TextInput } from "react-native";
-import colors from "../../helpers/colors";
-import iconHelper from "../../helpers/iconHelper";
-import StoreProductsView from "../StoreProductsView";
-
-const dummyStores = {
-  id: 1,
-  storeTitle: "Central Madeirense",
-  logo: "cm.png",
-};
-
-const dummyProducts = [
-  { id: 1, title: "Naranjas", format: "1 Kilo", price: "2.00", sold: 35 },
-  { id: 1, title: "Manzanas", format: "1 Kilo", price: "2.30", sold: 15 },
-  { id: 1, title: "Carne de res", format: "1 Kilo", price: "10.00", sold: 8 },
-  { id: 1, title: "Agua", format: "1 Litro", price: "0.50", sold: 124 },
-];
+import colors from "../../../helpers/colors";
+import iconHelper from "../../../helpers/iconHelper";
+import ProductDisplayList from "../../organisms/ProductDisplayList";
 
 function StoreView(props) {
+  console.log(props);
   return (
     <View>
+      {/* <Text>StoreView</Text> */}
       <View style={styles.superMarketTopContainer}>
         <Image
           style={styles.superMarketLogo}
-          source={require("../../assets/cm.png")}
+          source={require("../../../assets/cm.png")}
         />
         <TextInput style={styles.superMarketSearchInput}></TextInput>
         {iconHelper("AntDesign", "search1", 20, "green")}
       </View>
-      <StoreProductsView />
+      <ProductDisplayList />
     </View>
   );
 }
@@ -45,6 +34,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderBottomColor: "green",
     borderBottomWidth: 2,
+    backgroundColor: "white",
   },
   superMarketSearchInput: {
     borderColor: colors.lightgray,
@@ -57,3 +47,16 @@ const styles = StyleSheet.create({
 });
 
 export default StoreView;
+
+// const dummyStores = {
+//   id: 1,
+//   storeTitle: "Central Madeirense",
+//   logo: "cm.png",
+// };
+
+// const dummyProducts = [
+//   { id: 1, title: "Naranjas", format: "1 Kilo", price: "2.00", sold: 35 },
+//   { id: 1, title: "Manzanas", format: "1 Kilo", price: "2.30", sold: 15 },
+//   { id: 1, title: "Carne de res", format: "1 Kilo", price: "10.00", sold: 8 },
+//   { id: 1, title: "Agua", format: "1 Litro", price: "0.50", sold: 124 },
+// ];

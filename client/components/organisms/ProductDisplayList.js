@@ -16,8 +16,6 @@ function ProductDisplayList(props) {
         <ProductShowcase />
         <ProductShowcase />
         <ProductShowcase />
-        <ProductShowcase />
-        <ProductShowcase />
       </View>
     </ScrollView>
   );

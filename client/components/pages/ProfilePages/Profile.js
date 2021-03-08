@@ -6,9 +6,9 @@ import ProfileNavigator from "../navigations/ProfileNavigator";
 function Profile(props) {
   return (
     <View>
-      <NavigationContainer>
-        <ProfileNavigator />
-      </NavigationContainer>
+      {/* <NavigationContainer> */}
+      <ProfileNavigator />
+      {/* </NavigationContainer> */}
     </View>
   );
 }

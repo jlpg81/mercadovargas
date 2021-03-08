@@ -3,13 +3,13 @@ import { Text, View, StyleSheet, Image, TouchableOpacity } from "react-native";
 import colors from "../../helpers/colors";
 import AddButton from "../atoms/AddButton";
 
-function ProductShowcase({ store }) {
+function ProductShowcase({ store, navigation }) {
   return (
     <View style={styles.productContainer}>
       <TouchableOpacity
         style={styles.touchable}
         onPress={() => {
-          console.log("going to store...");
+          console.log(`going to store ${store.storeTitle}`);
         }}
       >
         <View style={styles.productImageContainer}>

@@ -10,7 +10,11 @@ function StoreItemHalfList(props) {
       return (
         <>
           {props.stores.stores.map((store, index) => (
-            <StoreItemHalf key={index} store={store} />
+            <StoreItemHalf
+              key={index}
+              store={store}
+              navigation={props.navigation}
+            />
           ))}
         </>
       );

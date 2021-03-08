@@ -1,9 +1,9 @@
 import React from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
-import CitySelector from "../atoms/CitySelector";
-import StoreItemHalfList from "../organisms/StoreItemHalfList";
-import StoreItemList from "../organisms/StoreItemList";
+import CitySelector from "../../atoms/CitySelector";
+import StoreItemHalfList from "../../organisms/StoreItemHalfList";
+import StoreItemList from "../../organisms/StoreItemList";
 import { gql, useQuery } from "@apollo/client";
 
 const STORE_QUERY = gql`
@@ -20,12 +20,13 @@ const STORE_QUERY = gql`
   }
 `;
 
-function MainPage(props) {
+function MainPageContent(props) {
   const { loading, error, data } = useQuery(STORE_QUERY);
 
   if (error) {
     console.log("query error", error);
   }
+
   return (
     <View style={styles.mainPageContainer}>
       <ScrollView>
@@ -33,15 +34,15 @@ function MainPage(props) {
         <View style={styles.mainPageBannerContainer}>
           <Image
             style={styles.mainPageBanner}
-            source={require("../../assets/dummy/mainBanner.jpg")}
+            source={require("../../../assets/dummy/mainBanner.jpg")}
           />
         </View>
-        {/* <Text style={styles.mainPageTitle}>Current Promotions</Text>
-        <StoreItemHalfList /> */}
+        <Text style={styles.mainPageTitle}>Current Promotions</Text>
+        <StoreItemHalfList stores={data} navigation={props.navigation} />
         <Text style={styles.mainPageTitle}>Popular now!</Text>
-        <StoreItemHalfList stores={data} />
+        <StoreItemHalfList stores={data} navigation={props.navigation} />
         <Text style={styles.mainPageTitle}>Near you</Text>
-        <StoreItemList stores={data} />
+        <StoreItemList stores={data} navigation={props.navigation} />
       </ScrollView>
     </View>
   );
@@ -65,4 +66,4 @@ const styles = StyleSheet.create({
   mainPageTitle: { marginLeft: 30, fontSize: 20 },
 });
 
-export default MainPage;
+export default MainPageContent;
