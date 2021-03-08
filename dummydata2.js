@@ -72,27 +72,36 @@ const products = [
     storeId: 1,
     productTitle: "Queso Paisa 1kg",
     productDescription: "Queso de los llanos",
+    productFormat: "1kg",
     productPrice: 12.0,
     categoryId: 24,
     amountAvailable: 9999,
+    productImage:
+      "https://www.thehallacafactory.com/image/cache/catalog/quesopaisa-500x500.jpg",
   },
   {
     id: 2,
-    storeId: 2,
-    productTitle: "Queso Paisa 1kg",
-    productDescription: "Queso de los llanos",
-    productPrice: 12.0,
-    categoryId: 24,
-    amountAvailable: 9999,
-  },
-  {
-    id: 3,
-    storeId: 3,
-    productTitle: "Tomates 1kg",
-    productDescription: "",
+    storeId: 1,
+    productTitle: "Harina Pan 500gr",
+    productDescription: "Harina para arepas",
+    productFormat: "500gr",
     productPrice: 2.0,
     categoryId: 24,
     amountAvailable: 9999,
+    productImage:
+      "https://elrincondelaabuelavenezolana.com/wp-content/uploads/2018/02/harina-pan-blanca-1kg-el-rincon-de-la-abuela-venezolana.jpg",
+  },
+  {
+    id: 3,
+    storeId: 1,
+    productTitle: "Tomates 1kg",
+    productDescription: "Tomates frescos",
+    productFormat: "1kg",
+    productPrice: 2.0,
+    categoryId: 24,
+    amountAvailable: 9999,
+    productImage:
+      "https://imagenes.20minutos.es/files/article_amp/uploads/2020/07/27/tomates.jpeg",
   },
 ];
 

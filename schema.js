@@ -48,10 +48,12 @@ const ProductType = new GraphQLObjectType({
     productTitle: { type: GraphQLString },
     productDescription: { type: GraphQLString },
     productPrice: { type: GraphQLInt },
+    productFormat: { type: GraphQLString },
     categoryId: { type: GraphQLInt },
     amountAvailable: { type: GraphQLInt },
     currentlySold: { type: GraphQLInt },
     deleted: { type: GraphQLInt },
+    productImage: { type: GraphQLString },
   },
 });
 
@@ -91,6 +93,20 @@ const RootQuery = new GraphQLObjectType({
       type: GraphQLList(ProductType),
       resolve(parent, args) {
         return products;
+      },
+    },
+
+    product: {
+      type: ProductType,
+      args: {
+        id: { type: GraphQLString },
+      },
+      resolve(parent, args) {
+        for (let i = 0; i < products.length; i++) {
+          if (products[i].id == args.id) {
+            return products[i];
+          }
+        }
       },
     },
   },

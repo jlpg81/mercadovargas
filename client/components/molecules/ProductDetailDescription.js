@@ -13,17 +13,20 @@ function ProductDetailDescription(props) {
           <Text style={styles.tableElement}>Package:</Text>
         </View>
         <View style={styles.tableRight}>
-          <Text style={styles.tableElement}>MooMoo Farm</Text>
-          <Text style={styles.tableElement}>1 Liter</Text>
-          <Text style={styles.tableElement}>1 Carton Brick</Text>
+          <Text style={styles.tableElement}>Sin Marca</Text>
+          <Text style={styles.tableElement}>
+            {props.data.product.productFormat}
+          </Text>
+          <Text style={styles.tableElement}>
+            {props.data.product.productFormat}
+          </Text>
         </View>
       </View>
       <Text style={styles.productDescriptionTitle}>Product Description</Text>
       <Text style={styles.extraDescription}>
-        This is just a normal, standard carton of milk. Not good if youre
-        lactose intolerant.
+        {props.data.product.productDescription}
       </Text>
-      <Text style={styles.extraDescription}>
+      {/* <Text style={styles.extraDescription}>
         Blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla
         blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla
         blabla blabla blabla blabla blabla blabla blabla blabla
@@ -32,7 +35,7 @@ function ProductDetailDescription(props) {
         Blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla
         blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla
         blabla blabla blabla blabla blabla blabla blabla blabla
-      </Text>
+      </Text> */}
     </View>
   );
 }

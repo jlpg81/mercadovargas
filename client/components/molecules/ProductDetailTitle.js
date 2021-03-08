@@ -4,10 +4,16 @@ import colors from "../../helpers/colors";
 import AddButton from "../atoms/AddButton";
 
 function ProductDetailTitle(props) {
+  console.log(`props`, props);
   return (
     <View style={styles.productDetailTitleContainer}>
-      <Text style={styles.productDetailTitle}>Milk</Text>
-      <Text style={styles.productDetailPrice}>2$ per 1 Liter</Text>
+      <Text style={styles.productDetailTitle}>
+        {props.data.product.productTitle}
+      </Text>
+      <Text style={styles.productDetailPrice}>
+        {props.data.product.productPrice}$ per{" "}
+        {props.data.product.productFormat}
+      </Text>
       <AddButton />
     </View>
   );
@@ -16,7 +22,6 @@ function ProductDetailTitle(props) {
 const styles = StyleSheet.create({
   productDetailTitleContainer: {
     justifyContent: "center",
-    // backgroundColor: "dodgerblue",
     textAlign: "center",
   },
   productDetailTitle: { color: colors.green100, textAlign: "center" },

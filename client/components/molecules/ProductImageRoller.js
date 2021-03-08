@@ -2,11 +2,12 @@ import React from "react";
 import { View, StyleSheet, Image, Text } from "react-native";
 
 function ProductImageRoller(props) {
+  // console.log(props);
   return (
     <View style={styles.productDetailImageContainer}>
       <Image
         style={styles.productDetailImage}
-        source={require("../../assets/milk2.jpg")}
+        source={{ uri: props.data.product.productImage }}
       />
     </View>
   );

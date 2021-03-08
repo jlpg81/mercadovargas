@@ -1,22 +1,36 @@
 import React from "react";
-import { Text, View, StyleSheet, Image } from "react-native";
+import { Text, View, StyleSheet, Image, TouchableOpacity } from "react-native";
 import colors from "../../helpers/colors";
 import AddButton from "../atoms/AddButton";
+import { useNavigation } from "@react-navigation/native";
 
 function ProductShowcase(props) {
+  const navigation = useNavigation();
+
   return (
     <View style={styles.productContainer}>
-      <View style={styles.productImageContainer}>
-        <Image
-          style={styles.productImage}
-          source={require("../../assets/milk2.jpg")}
-        />
-      </View>
+      <TouchableOpacity
+        onPress={() => {
+          {
+            navigation.navigate("ProductDetailView", {
+              productId: props.product.id,
+            });
+          }
+        }}
+      >
+        <View style={styles.productImageContainer}>
+          <Image
+            style={styles.productImage}
+            source={{ uri: props.product.productImage }}
+          />
+        </View>
+      </TouchableOpacity>
       <View style={styles.productTextContainer}>
-        <Text style={styles.productTitle}>Great Value Whole Milk</Text>
-        <Text style={styles.productFormat}>2$ per 1 Liter</Text>
-        {/* <Text style={styles.productPrice}>2$</Text> */}
-        <AddButton />
+        <Text style={styles.productTitle}>{props.product.productTitle}</Text>
+        <Text style={styles.productFormat}>
+          {props.product.productPrice}$ for {props.product.productFormat}
+        </Text>
+        <AddButton productId={props.product.productId} />
       </View>
     </View>
   );
@@ -34,7 +48,6 @@ const styles = StyleSheet.create({
   productImageContainer: {
     height: 100,
     width: 100,
-    backgroundColor: "blue",
   },
   productImage: {
     height: "100%",
@@ -50,10 +63,6 @@ const styles = StyleSheet.create({
     color: colors.green100,
   },
   productFormat: {
-    textAlign: "center",
-    color: "black",
-  },
-  productPrice: {
     textAlign: "center",
     color: "black",
   },
