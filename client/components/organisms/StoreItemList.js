@@ -4,23 +4,21 @@ import { ScrollView } from "react-native-gesture-handler";
 import StoreItem from "../molecules/StoreItem";
 
 function StoreItemList(props) {
+  const displayStores = () => {
+    if (props.stores) {
+      return (
+        <>
+          {props.stores.stores.map((store, index) => (
+            <StoreItem key={index} store={store} />
+          ))}
+        </>
+      );
+    }
+  };
+
   return (
     <ScrollView>
-      <View style={styles.storeItemListContainer}>
-        <StoreItem />
-        <StoreItem />
-        <StoreItem />
-        <StoreItem />
-        <StoreItem />
-        <StoreItem />
-        <StoreItem />
-        <StoreItem />
-        <StoreItem />
-        <StoreItem />
-        <StoreItem />
-        <StoreItem />
-        <StoreItem />
-      </View>
+      <View style={styles.storeItemListContainer}>{displayStores()}</View>
     </ScrollView>
   );
 }

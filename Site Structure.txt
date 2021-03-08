@@ -13,8 +13,3 @@ Profile
     ManageStoreView
 
 
-For the Main menu... 
-  Banner
-  Promotions (horizontal 2,5 items per row)
-  Popular stores (horizontal 2,5 items per row)
-  Near you (standard vertical items)

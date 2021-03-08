@@ -13,5 +13,3 @@ Products:
   Create
   Read
   Update (limited)
-
-  guys this blew my mind, and I just had to share it with everyone

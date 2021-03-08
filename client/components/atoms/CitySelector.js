@@ -11,7 +11,6 @@ import colors from "../../helpers/colors";
 
 function CitySelector(props) {
   const [modalVisible, setModalVisible] = useState(false);
-  console.log(modalVisible);
   return (
     <>
       <View style={styles.citySelectorContainer}>
@@ -21,7 +20,6 @@ function CitySelector(props) {
         <View style={styles.selectorItemContainer}>
           <TouchableWithoutFeedback
             onPress={() => {
-              console.log("pressing city selector");
               setModalVisible(true);
             }}
           >
@@ -48,7 +46,6 @@ function CitySelector(props) {
           <Button
             title="Close"
             onPress={() => {
-              console.log("setting modal visibility to false");
               setModalVisible(false);
             }}
           />

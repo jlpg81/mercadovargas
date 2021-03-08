@@ -3,7 +3,7 @@ import { Text, View, StyleSheet, Image, TouchableOpacity } from "react-native";
 import colors from "../../helpers/colors";
 import AddButton from "../atoms/AddButton";
 
-function ProductShowcase(props) {
+function ProductShowcase({ store }) {
   return (
     <View style={styles.productContainer}>
       <TouchableOpacity
@@ -13,15 +13,16 @@ function ProductShowcase(props) {
         }}
       >
         <View style={styles.productImageContainer}>
-          <Image
-            style={styles.productImage}
-            source={require("../../assets/dummy/brand.jpg")}
-          />
+          <Image style={styles.productImage} source={{ uri: store.logo }} />
         </View>
         <View style={styles.productTextContainer}>
-          <Text style={styles.productFormat}>Makro Valencia</Text>
-          <Text style={styles.productFormat}>Valencia, Carabobo</Text>
-          <Text style={styles.productFormat}>⭐ 4.3 (506)</Text>
+          <Text style={styles.productFormat}>{store.storeTitle}</Text>
+          <Text style={styles.productFormat}>
+            {store.city}, {store.state}
+          </Text>
+          <Text style={styles.productFormat}>
+            ⭐ {store.rating} ({store.votes})
+          </Text>
         </View>
       </TouchableOpacity>
     </View>
